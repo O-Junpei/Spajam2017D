@@ -235,37 +235,26 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func shakeOn() {
         
-        func sentMessage(message:String){
+        let url:String = "http://192.168.226.14/arduino/digital/13/"
+
+        
+        if isPerfume {
+            isPerfume = false
+            url += "0"
+        }else{
+            isPerfume = true
+            url += "1"
+        } 
+        
+        Alamofire.request(url, method: .get).responseJSON{ response in
             
-            if isPerfume {
-                isPerfume = false
-            }else{
-                isPerfume = true
-            }
-            
-            let parameters: Parameters = [
-                "username": userName,
-                "message": "empty",
-                "perfume": isPerfume
-            ]
-            
-            let url:String = "https://onsen-hackathon-rails-server.herokuapp.com/api/v0/rooms/" + String(roomName)
-            
-            Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+            switch response.result {
+            case .success: break
                 
-                switch response.result {
-                case .success:
-                    print("Validation Successful")
-                    
-                    let json:JSON = JSON(response.result.value ?? kill)
-                    print(json)
-                case .failure(let error):
-                    print(error)
-                    //テーブルの再読み込み
-                }
+            case .failure(let error):
+                print(error)
             }
         }
-        
     }
 
 }
