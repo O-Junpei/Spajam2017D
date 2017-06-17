@@ -27,11 +27,34 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.viewWidth = self.view.frame.width
         self.viewHeight = self.view.frame.height
         
+        
         self.navigationController?.setNavigationBarHidden(true, animated: false)
 
         
         setDatas()
         
+        //Viewの背景色を設定
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "background_talk")?.draw(in: self.view.bounds)
+        let image: UIImage! = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
+        
+        
+        
+        // make UIImageView instance
+        var imageView = UIImageView(frame: self.view.frame)
+        // read image
+        let image2 = UIImage(named: "background_talk")
+        // set image to ImageView
+        imageView.image = image2
+        // set alpha value of imageView
+        imageView.alpha = 1.0
+        // set imageView to backgroundView of TableView
+        //self.tableView.backgroundView = imageView
+        chatTableView.backgroundView = imageView
+        
+        /*
         
         // make UIImageView instance
         let imageView = UIImageView(frame: self.view.frame)
@@ -43,13 +66,13 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         imageView.alpha = 0.5
         // set imageView to backgroundView of TableView
         chatTableView.backgroundView = imageView
-        
+        */
         
         //
         //chatTableView = UITableView()
         chatTableView.delegate = self
         chatTableView.dataSource = self
-        chatTableView.frame = CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight)
+        chatTableView.frame = CGRect(x: 0, y: PARTS_HEIGHT_STATUS_BAR+PARTS_HEIGHT_NAVIGATION_BAR, width: viewWidth, height: viewHeight-(PARTS_HEIGHT_STATUS_BAR+PARTS_HEIGHT_NAVIGATION_BAR))
         chatTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         chatTableView.register(RightChatTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(RightChatTableViewCell.self))
         chatTableView.register(LeftChatTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(LeftChatTableViewCell.self))
