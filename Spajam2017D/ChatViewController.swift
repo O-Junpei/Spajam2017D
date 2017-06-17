@@ -26,7 +26,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         //画面横サイズを取得
         self.viewWidth = self.view.frame.width
         self.viewHeight = self.view.frame.height
-        self.navigationController?.navigationBar.isTranslucent = false
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
 
         
         setDatas()
@@ -35,7 +36,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         // make UIImageView instance
         let imageView = UIImageView(frame: self.view.frame)
         // read image
-        let image = UIImage(named: "background")
+        let image = UIImage(named: "background_talk")
         // set image to ImageView
         imageView.image = image
         // set alpha value of imageView
@@ -104,9 +105,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         if indexPath.row % 2 == 0 {
             let cell:RightChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(RightChatTableViewCell.self), for: indexPath) as! RightChatTableViewCell
-            
             cell.commentLabel.text = "右"
-            
             // cellの背景を透過
             cell.backgroundColor = UIColor.clear
             // cell内のcontentViewの背景を透過
@@ -114,9 +113,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             return cell
         }else{
             let cell:LeftChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(LeftChatTableViewCell.self), for: indexPath) as! LeftChatTableViewCell
-            
             cell.commentLabel.text = "左"
-            
             // cellの背景を透過
             cell.backgroundColor = UIColor.clear
             // cell内のcontentViewの背景を透過

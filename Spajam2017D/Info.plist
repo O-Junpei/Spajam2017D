@@ -5,7 +5,7 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>CFBundleDisplayName</key>
-	<string>&quot;むすびて&quot;</string>
+	<string>むすびて</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

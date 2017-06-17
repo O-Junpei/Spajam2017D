@@ -20,6 +20,10 @@ class ViewController: UIViewController {
         //画面横サイズを取得
         self.viewWidth = self.view.frame.width
         self.viewHeight = self.view.frame.height
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        
         self.navigationController?.navigationBar.isTranslucent = false
         
         //Viewの背景色を設定
