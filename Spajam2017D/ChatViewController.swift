@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -38,40 +40,33 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func setDatas() {
         
-        var comment0 = Dictionary<String,String>()
-        comment0["user"] = "onojun"
-        comment0["comment"] = "こんばんは、純平だよ"
-        comments.append(comment0)
+        let url:String = "https://onsen-hackathon-rails-server.herokuapp.com/api/v0/rooms/room1"
         
-        var comment1 = Dictionary<String,String>()
-        comment1["user"] = "user name"
-        comment1["comment"] = "こんばんは、プレゼントありがとう"
-        comments.append(comment1)
+        Alamofire.request(url, method: .get).responseJSON{ response in
+            
+            switch response.result {
+            case .success:
+                let json:JSON = JSON(response.result.value ?? kill)
+                
+                //print(json)
+                
+                
+                for i in 0..<json.count {
+                    
+                    var comment = Dictionary<String,String>()
+                    comment["username"] = json[i]["username"].stringValue
+                    comment["message"] = json[i]["message"].stringValue
+                    
+                    print(json[i]["message"].stringValue)
+                    self.comments.append(comment)
+                }
+                
+                self.chatTableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
         
-        var comment2 = Dictionary<String,String>()
-        comment2["user"] = "onojun"
-        comment2["comment"] = "あまーーーーーーーーーーいでしょ"
-        comments.append(comment2)
-        
-        var comment3 = Dictionary<String,String>()
-        comment3["user"] = "user name"
-        comment3["comment"] = "あばんは、プレゼントありがょ"
-        comments.append(comment3)
-        
-        var comment4 = Dictionary<String,String>()
-        comment4["user"] = "user name"
-        comment4["comment"] = "こんばんは、プレゼントありがとう"
-        comments.append(comment4)
-        
-        var comment5 = Dictionary<String,String>()
-        comment5["user"] = "onojun"
-        comment5["comment"] = "あばんは、プレゼントありがでしょ"
-        comments.append(comment5)
-        
-        var comment6 = Dictionary<String,String>()
-        comment6["user"] = "user name"
-        comment6["comment"] = "あまーーばんは、プレゼントありがいでしょ"
-        comments.append(comment6)
     }
     
     func setView() {
@@ -145,10 +140,12 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         var comment2 = Dictionary<String,String>()
         comment2 = comments[indexPath.row]
+        print(comment2)
+        
         
         if indexPath.row % 2 == 0 {
             let cell:RightChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(RightChatTableViewCell.self), for: indexPath) as! RightChatTableViewCell
-            cell.commentLabel.text = comment2["comment"]
+            cell.commentLabel.text = comment2["message"]
             // cellの背景を透過
             cell.backgroundColor = UIColor.clear
             // cell内のcontentViewの背景を透過
@@ -158,7 +155,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             return cell
         }else{
             let cell:LeftChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(LeftChatTableViewCell.self), for: indexPath) as! LeftChatTableViewCell
-            cell.commentLabel.text = comment2["comment"]
+            cell.commentLabel.text = comment2["message"]
             // cellの背景を透過
             cell.backgroundColor = UIColor.clear
             // cell内のcontentViewの背景を透過
