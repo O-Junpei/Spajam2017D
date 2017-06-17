@@ -29,12 +29,21 @@ class ViewController: UIViewController {
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
         
+        //解説のラベル
+        let descriptionLabel:UILabel = UILabel()
+        descriptionLabel.text = "メッセージをやり取りするには\nルーム名、自分の名前\n入力してください"
+        descriptionLabel.frame =  CGRect(x: viewWidth*0.1, y: 40, width: viewWidth*0.8, height: 5)
+        descriptionLabel.textAlignment = NSTextAlignment.center
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.sizeToFit()
+        self.view.addSubview(descriptionLabel)
         
-        
+        //ボタン
         let goChatVCBtn:UIButton = UIButton()
-        goChatVCBtn.frame =  CGRect(x: 0, y: 0, width: 100, height: 100)
-        goChatVCBtn.backgroundColor = UIColor.red
+        goChatVCBtn.frame = CGRect(x: viewWidth*0.1, y: viewHeight*0.6, width: viewWidth*0.8, height: viewWidth*0.2)
+        goChatVCBtn.backgroundColor = UIColor.appRightGreen()
         goChatVCBtn.addTarget(self, action: #selector(goChatVCBtnClicked(sender:)), for:.touchUpInside)
+        goChatVCBtn.setTitle("つながる", for: UIControlState.normal)
         self.view.addSubview(goChatVCBtn)
     }
     // MARK: - チャットボタンが押されたら呼ばれる
