@@ -6,7 +6,10 @@ target 'Spajam2017D' do
   use_frameworks!
 
   # Pods for Spajam2017D
-
+  pod 'SCLAlertView'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  
   target 'Spajam2017DTests' do
     inherit! :search_paths
     # Pods for testing
