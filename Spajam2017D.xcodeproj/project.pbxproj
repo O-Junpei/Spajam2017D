@@ -1,0 +1,732 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A57A9F757418C5E4FEB65EC /* Pods_Spajam2017DTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99EC792A27978FB955227F2 /* Pods_Spajam2017DTests.framework */; };
+		66D9531843B4DBD56234410A /* Pods_Spajam2017D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0552F0AEA4C37B6C673E7A46 /* Pods_Spajam2017D.framework */; };
+		8DDB1C6F1EF50E70006B132A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB1C6E1EF50E70006B132A /* AppDelegate.swift */; };
+		8DDB1C711EF50E70006B132A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB1C701EF50E70006B132A /* ViewController.swift */; };
+		8DDB1C741EF50E70006B132A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DDB1C721EF50E70006B132A /* Main.storyboard */; };
+		8DDB1C761EF50E70006B132A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DDB1C751EF50E70006B132A /* Assets.xcassets */; };
+		8DDB1C791EF50E70006B132A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DDB1C771EF50E70006B132A /* LaunchScreen.storyboard */; };
+		8DDB1C841EF50E70006B132A /* Spajam2017DTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB1C831EF50E70006B132A /* Spajam2017DTests.swift */; };
+		8DDB1C8F1EF50E70006B132A /* Spajam2017DUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB1C8E1EF50E70006B132A /* Spajam2017DUITests.swift */; };
+		D8C4BB60767822AE9F67295E /* Pods_Spajam2017DUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D74014DE1ABE6C75470BE6AA /* Pods_Spajam2017DUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8DDB1C801EF50E70006B132A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DDB1C631EF50E70006B132A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DDB1C6A1EF50E70006B132A;
+			remoteInfo = Spajam2017D;
+		};
+		8DDB1C8B1EF50E70006B132A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DDB1C631EF50E70006B132A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DDB1C6A1EF50E70006B132A;
+			remoteInfo = Spajam2017D;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0552F0AEA4C37B6C673E7A46 /* Pods_Spajam2017D.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spajam2017D.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49AECD873D02A40361FC8089 /* Pods-Spajam2017DUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spajam2017DUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spajam2017DUITests/Pods-Spajam2017DUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7253A10E76938A9AAC2C1A91 /* Pods-Spajam2017DUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spajam2017DUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spajam2017DUITests/Pods-Spajam2017DUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8963AB9924277BB2A5CEB403 /* Pods-Spajam2017D.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spajam2017D.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spajam2017D/Pods-Spajam2017D.release.xcconfig"; sourceTree = "<group>"; };
+		8DDB1C6B1EF50E70006B132A /* Spajam2017D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spajam2017D.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DDB1C6E1EF50E70006B132A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8DDB1C701EF50E70006B132A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8DDB1C731EF50E70006B132A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8DDB1C751EF50E70006B132A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8DDB1C781EF50E70006B132A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8DDB1C7A1EF50E70006B132A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DDB1C7F1EF50E70006B132A /* Spajam2017DTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spajam2017DTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DDB1C831EF50E70006B132A /* Spajam2017DTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spajam2017DTests.swift; sourceTree = "<group>"; };
+		8DDB1C851EF50E70006B132A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DDB1C8A1EF50E70006B132A /* Spajam2017DUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Spajam2017DUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DDB1C8E1EF50E70006B132A /* Spajam2017DUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spajam2017DUITests.swift; sourceTree = "<group>"; };
+		8DDB1C901EF50E70006B132A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A068F790DB1E17B0A28D201F /* Pods-Spajam2017DTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spajam2017DTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spajam2017DTests/Pods-Spajam2017DTests.release.xcconfig"; sourceTree = "<group>"; };
+		AD8987CC17697217DD2DF5D2 /* Pods-Spajam2017D.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spajam2017D.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spajam2017D/Pods-Spajam2017D.debug.xcconfig"; sourceTree = "<group>"; };
+		D74014DE1ABE6C75470BE6AA /* Pods_Spajam2017DUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spajam2017DUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D99EC792A27978FB955227F2 /* Pods_Spajam2017DTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spajam2017DTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF7A4F41B56DEFF9B08833A5 /* Pods-Spajam2017DTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spajam2017DTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spajam2017DTests/Pods-Spajam2017DTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DDB1C681EF50E70006B132A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66D9531843B4DBD56234410A /* Pods_Spajam2017D.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DDB1C7C1EF50E70006B132A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A57A9F757418C5E4FEB65EC /* Pods_Spajam2017DTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DDB1C871EF50E70006B132A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8C4BB60767822AE9F67295E /* Pods_Spajam2017DUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B58BA303E2D51A3A59B3BBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0552F0AEA4C37B6C673E7A46 /* Pods_Spajam2017D.framework */,
+				D99EC792A27978FB955227F2 /* Pods_Spajam2017DTests.framework */,
+				D74014DE1ABE6C75470BE6AA /* Pods_Spajam2017DUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8DDB1C621EF50E70006B132A = {
+			isa = PBXGroup;
+			children = (
+				8DDB1C6D1EF50E70006B132A /* Spajam2017D */,
+				8DDB1C821EF50E70006B132A /* Spajam2017DTests */,
+				8DDB1C8D1EF50E70006B132A /* Spajam2017DUITests */,
+				8DDB1C6C1EF50E70006B132A /* Products */,
+				F69C2D0715BF6D5AF98ADD6B /* Pods */,
+				7B58BA303E2D51A3A59B3BBE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8DDB1C6C1EF50E70006B132A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DDB1C6B1EF50E70006B132A /* Spajam2017D.app */,
+				8DDB1C7F1EF50E70006B132A /* Spajam2017DTests.xctest */,
+				8DDB1C8A1EF50E70006B132A /* Spajam2017DUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8DDB1C6D1EF50E70006B132A /* Spajam2017D */ = {
+			isa = PBXGroup;
+			children = (
+				8DDB1C6E1EF50E70006B132A /* AppDelegate.swift */,
+				8DDB1C701EF50E70006B132A /* ViewController.swift */,
+				8DDB1C721EF50E70006B132A /* Main.storyboard */,
+				8DDB1C751EF50E70006B132A /* Assets.xcassets */,
+				8DDB1C771EF50E70006B132A /* LaunchScreen.storyboard */,
+				8DDB1C7A1EF50E70006B132A /* Info.plist */,
+			);
+			path = Spajam2017D;
+			sourceTree = "<group>";
+		};
+		8DDB1C821EF50E70006B132A /* Spajam2017DTests */ = {
+			isa = PBXGroup;
+			children = (
+				8DDB1C831EF50E70006B132A /* Spajam2017DTests.swift */,
+				8DDB1C851EF50E70006B132A /* Info.plist */,
+			);
+			path = Spajam2017DTests;
+			sourceTree = "<group>";
+		};
+		8DDB1C8D1EF50E70006B132A /* Spajam2017DUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8DDB1C8E1EF50E70006B132A /* Spajam2017DUITests.swift */,
+				8DDB1C901EF50E70006B132A /* Info.plist */,
+			);
+			path = Spajam2017DUITests;
+			sourceTree = "<group>";
+		};
+		F69C2D0715BF6D5AF98ADD6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD8987CC17697217DD2DF5D2 /* Pods-Spajam2017D.debug.xcconfig */,
+				8963AB9924277BB2A5CEB403 /* Pods-Spajam2017D.release.xcconfig */,
+				EF7A4F41B56DEFF9B08833A5 /* Pods-Spajam2017DTests.debug.xcconfig */,
+				A068F790DB1E17B0A28D201F /* Pods-Spajam2017DTests.release.xcconfig */,
+				7253A10E76938A9AAC2C1A91 /* Pods-Spajam2017DUITests.debug.xcconfig */,
+				49AECD873D02A40361FC8089 /* Pods-Spajam2017DUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DDB1C6A1EF50E70006B132A /* Spajam2017D */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DDB1C931EF50E70006B132A /* Build configuration list for PBXNativeTarget "Spajam2017D" */;
+			buildPhases = (
+				4329896E3A693B2889FD5C95 /* [CP] Check Pods Manifest.lock */,
+				8DDB1C671EF50E70006B132A /* Sources */,
+				8DDB1C681EF50E70006B132A /* Frameworks */,
+				8DDB1C691EF50E70006B132A /* Resources */,
+				D4D5C205A248BDF419804C59 /* [CP] Embed Pods Frameworks */,
+				EBA9F87407224D349038F934 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Spajam2017D;
+			productName = Spajam2017D;
+			productReference = 8DDB1C6B1EF50E70006B132A /* Spajam2017D.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8DDB1C7E1EF50E70006B132A /* Spajam2017DTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DDB1C961EF50E70006B132A /* Build configuration list for PBXNativeTarget "Spajam2017DTests" */;
+			buildPhases = (
+				C6ED5FBC44BAC5E9CA337E61 /* [CP] Check Pods Manifest.lock */,
+				8DDB1C7B1EF50E70006B132A /* Sources */,
+				8DDB1C7C1EF50E70006B132A /* Frameworks */,
+				8DDB1C7D1EF50E70006B132A /* Resources */,
+				40F331C9B24E042E9D2A0BAC /* [CP] Embed Pods Frameworks */,
+				A8146D46BC2A044337AD401A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DDB1C811EF50E70006B132A /* PBXTargetDependency */,
+			);
+			name = Spajam2017DTests;
+			productName = Spajam2017DTests;
+			productReference = 8DDB1C7F1EF50E70006B132A /* Spajam2017DTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8DDB1C891EF50E70006B132A /* Spajam2017DUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DDB1C991EF50E70006B132A /* Build configuration list for PBXNativeTarget "Spajam2017DUITests" */;
+			buildPhases = (
+				A02D6C0118523D850DC1BCC0 /* [CP] Check Pods Manifest.lock */,
+				8DDB1C861EF50E70006B132A /* Sources */,
+				8DDB1C871EF50E70006B132A /* Frameworks */,
+				8DDB1C881EF50E70006B132A /* Resources */,
+				D37AD24C93EA7BC666CF56F1 /* [CP] Embed Pods Frameworks */,
+				4C9F6D3DF2F66F2E4B05BA12 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DDB1C8C1EF50E70006B132A /* PBXTargetDependency */,
+			);
+			name = Spajam2017DUITests;
+			productName = Spajam2017DUITests;
+			productReference = 8DDB1C8A1EF50E70006B132A /* Spajam2017DUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8DDB1C631EF50E70006B132A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "junpei ono";
+				TargetAttributes = {
+					8DDB1C6A1EF50E70006B132A = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 5RH346BQ66;
+						ProvisioningStyle = Automatic;
+					};
+					8DDB1C7E1EF50E70006B132A = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 5RH346BQ66;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8DDB1C6A1EF50E70006B132A;
+					};
+					8DDB1C891EF50E70006B132A = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 5RH346BQ66;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8DDB1C6A1EF50E70006B132A;
+					};
+				};
+			};
+			buildConfigurationList = 8DDB1C661EF50E70006B132A /* Build configuration list for PBXProject "Spajam2017D" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8DDB1C621EF50E70006B132A;
+			productRefGroup = 8DDB1C6C1EF50E70006B132A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DDB1C6A1EF50E70006B132A /* Spajam2017D */,
+				8DDB1C7E1EF50E70006B132A /* Spajam2017DTests */,
+				8DDB1C891EF50E70006B132A /* Spajam2017DUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8DDB1C691EF50E70006B132A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DDB1C791EF50E70006B132A /* LaunchScreen.storyboard in Resources */,
+				8DDB1C761EF50E70006B132A /* Assets.xcassets in Resources */,
+				8DDB1C741EF50E70006B132A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DDB1C7D1EF50E70006B132A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DDB1C881EF50E70006B132A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		40F331C9B24E042E9D2A0BAC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spajam2017DTests/Pods-Spajam2017DTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4329896E3A693B2889FD5C95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4C9F6D3DF2F66F2E4B05BA12 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spajam2017DUITests/Pods-Spajam2017DUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A02D6C0118523D850DC1BCC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A8146D46BC2A044337AD401A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spajam2017DTests/Pods-Spajam2017DTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6ED5FBC44BAC5E9CA337E61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D37AD24C93EA7BC666CF56F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spajam2017DUITests/Pods-Spajam2017DUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4D5C205A248BDF419804C59 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spajam2017D/Pods-Spajam2017D-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBA9F87407224D349038F934 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spajam2017D/Pods-Spajam2017D-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DDB1C671EF50E70006B132A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DDB1C711EF50E70006B132A /* ViewController.swift in Sources */,
+				8DDB1C6F1EF50E70006B132A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DDB1C7B1EF50E70006B132A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DDB1C841EF50E70006B132A /* Spajam2017DTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DDB1C861EF50E70006B132A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DDB1C8F1EF50E70006B132A /* Spajam2017DUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8DDB1C811EF50E70006B132A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DDB1C6A1EF50E70006B132A /* Spajam2017D */;
+			targetProxy = 8DDB1C801EF50E70006B132A /* PBXContainerItemProxy */;
+		};
+		8DDB1C8C1EF50E70006B132A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DDB1C6A1EF50E70006B132A /* Spajam2017D */;
+			targetProxy = 8DDB1C8B1EF50E70006B132A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8DDB1C721EF50E70006B132A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DDB1C731EF50E70006B132A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8DDB1C771EF50E70006B132A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DDB1C781EF50E70006B132A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8DDB1C911EF50E70006B132A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8DDB1C921EF50E70006B132A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8DDB1C941EF50E70006B132A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD8987CC17697217DD2DF5D2 /* Pods-Spajam2017D.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5RH346BQ66;
+				INFOPLIST_FILE = Spajam2017D/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiswiswift.Spajam2017D;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8DDB1C951EF50E70006B132A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8963AB9924277BB2A5CEB403 /* Pods-Spajam2017D.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5RH346BQ66;
+				INFOPLIST_FILE = Spajam2017D/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiswiswift.Spajam2017D;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		8DDB1C971EF50E70006B132A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF7A4F41B56DEFF9B08833A5 /* Pods-Spajam2017DTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 5RH346BQ66;
+				INFOPLIST_FILE = Spajam2017DTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiswiswift.Spajam2017DTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spajam2017D.app/Spajam2017D";
+			};
+			name = Debug;
+		};
+		8DDB1C981EF50E70006B132A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A068F790DB1E17B0A28D201F /* Pods-Spajam2017DTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 5RH346BQ66;
+				INFOPLIST_FILE = Spajam2017DTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiswiswift.Spajam2017DTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spajam2017D.app/Spajam2017D";
+			};
+			name = Release;
+		};
+		8DDB1C9A1EF50E70006B132A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7253A10E76938A9AAC2C1A91 /* Pods-Spajam2017DUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 5RH346BQ66;
+				INFOPLIST_FILE = Spajam2017DUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiswiswift.Spajam2017DUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Spajam2017D;
+			};
+			name = Debug;
+		};
+		8DDB1C9B1EF50E70006B132A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49AECD873D02A40361FC8089 /* Pods-Spajam2017DUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 5RH346BQ66;
+				INFOPLIST_FILE = Spajam2017DUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiswiswift.Spajam2017DUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Spajam2017D;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8DDB1C661EF50E70006B132A /* Build configuration list for PBXProject "Spajam2017D" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DDB1C911EF50E70006B132A /* Debug */,
+				8DDB1C921EF50E70006B132A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8DDB1C931EF50E70006B132A /* Build configuration list for PBXNativeTarget "Spajam2017D" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DDB1C941EF50E70006B132A /* Debug */,
+				8DDB1C951EF50E70006B132A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8DDB1C961EF50E70006B132A /* Build configuration list for PBXNativeTarget "Spajam2017DTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DDB1C971EF50E70006B132A /* Debug */,
+				8DDB1C981EF50E70006B132A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8DDB1C991EF50E70006B132A /* Build configuration list for PBXNativeTarget "Spajam2017DUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DDB1C9A1EF50E70006B132A /* Debug */,
+				8DDB1C9B1EF50E70006B132A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8DDB1C631EF50E70006B132A /* Project object */;
+}
