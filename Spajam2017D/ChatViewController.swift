@@ -13,6 +13,11 @@ import SCLAlertView
 
 class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    //ChatInfo
+    var roomName:String!
+    var userName:String!
+    var isPerfume:Bool = false
+    
     //width, height
     private var viewWidth:CGFloat!
     private var viewHeight:CGFloat!
@@ -39,16 +44,14 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func setDatas() {
         
-        let url:String = "https://onsen-hackathon-rails-server.herokuapp.com/api/v0/rooms/room1"
+        comments = []
+        let url:String = "https://onsen-hackathon-rails-server.herokuapp.com/api/v0/rooms/" + String(roomName)
         
         Alamofire.request(url, method: .get).responseJSON{ response in
             
             switch response.result {
             case .success:
                 let json:JSON = JSON(response.result.value ?? kill)
-                
-                //print(json)
-                
                 
                 for i in 0..<json.count {
                     
@@ -61,11 +64,11 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 }
                 
                 self.chatTableView.reloadData()
+                
             case .failure(let error):
                 print(error)
             }
         }
-        
     }
     
     func setView() {
@@ -78,7 +81,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         //戻るボタン
         let backBtn:UIButton = UIButton()
-        backBtn.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        backBtn.frame = CGRect(x: viewWidth*0.04, y: viewWidth*0.07, width: viewWidth*0.1, height: viewWidth*0.1)
         backBtn.setImage(UIImage(named: "back"), for: UIControlState.normal)
         backBtn.addTarget(self, action: #selector(backButtonClicked(sender:)), for:.touchUpInside)
         self.view.addSubview(backBtn)
@@ -111,9 +114,15 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         addBtn.addTarget(self, action: #selector(addButtonClicked(sender:)), for: .touchUpInside)
         self.view.addSubview(addBtn)
         
+        //投稿ボタン
+        let reloadBtn:UIButton = UIButton()
+        reloadBtn.frame = CGRect(x: viewWidth*0.8, y: 0, width: viewWidth*0.1, height: viewWidth*0.1)
+        reloadBtn.backgroundColor = UIColor.blue
+        reloadBtn.addTarget(self, action: #selector(reloadBtnClicked(sender:)), for: .touchUpInside)
+        self.view.addSubview(reloadBtn)
+        
     }
         
-    
     
     // MARK: - Button Action
     //backボタンが押されたら呼ばれます
@@ -129,15 +138,17 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let txt = alert.addTextField("メッセージを入力")
         alert.addButton("送信") {
             
-            let string:String! = String(describing: txt.text!)
-            print(string)
-            
-            self.sentMessage(message: "test")
+            let sendMessage:String! = String(describing: txt.text!)
+            //print(sendMessage)
+            self.sentMessage(message: sendMessage)
         }
         alert.showEdit("メッセージ送信", subTitle: "メッセージを入力してください。")
     }
     
-    
+    //basicボタンが押されたら呼ばれます
+    func reloadBtnClicked(sender: UIButton){
+        setDatas()
+    }
     
     // MARK: - TableViewのデリゲートメソッド
 
@@ -163,7 +174,6 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         comment2 = comments[indexPath.row]
         print(comment2)
         
-        
         if indexPath.row % 2 == 0 {
             let cell:RightChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(RightChatTableViewCell.self), for: indexPath) as! RightChatTableViewCell
             cell.commentLabel.text = comment2["message"]
@@ -186,21 +196,20 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             return cell
             
         }
-        
-        
     }
-    
     
     
     func sentMessage(message:String){
         
         let parameters: Parameters = [
-            "username": "mofumofuchan",
-            "message": "おっぱい",
+            "username": userName,
+            "message": message,
             "perfume": false
         ]
         
-        Alamofire.request("https://onsen-hackathon-rails-server.herokuapp.com/api/v0/rooms/room1", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+        let url:String = "https://onsen-hackathon-rails-server.herokuapp.com/api/v0/rooms/" + String(roomName)
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
             
             switch response.result {
             case .success:
@@ -220,20 +229,29 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == UIEventSubtype.motionShake {
             print("Device was shaked")
+            shakeOn()
         }
     }
     
-    func aaa() {
+    func shakeOn() {
         
         func sentMessage(message:String){
             
+            if isPerfume {
+                isPerfume = false
+            }else{
+                isPerfume = true
+            }
+            
             let parameters: Parameters = [
-                "username": "mofumofuchan",
-                "message": "none",
-                "perfume": true
+                "username": userName,
+                "message": "empty",
+                "perfume": isPerfume
             ]
             
-            Alamofire.request("https://onsen-hackathon-rails-server.herokuapp.com/api/v0/rooms/room1", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+            let url:String = "https://onsen-hackathon-rails-server.herokuapp.com/api/v0/rooms/" + String(roomName)
+            
+            Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
                 
                 switch response.result {
                 case .success:

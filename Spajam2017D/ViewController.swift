@@ -146,7 +146,10 @@ class ViewController: UIViewController,UITextFieldDelegate {
     func goChatView(){
         //画面遷移、投稿詳細画面へ
         let chatVC: ChatViewController = ChatViewController()
-        //picDetailView.postID = sender.view?.tag
+        //chatVC.roomName = roomNameTextField.text!
+        //chatVC.userName = userNameTextField.text!
+        chatVC.roomName = "room1"
+        chatVC.userName = "mofumofuchan"
         self.navigationController?.pushViewController(chatVC, animated: true)
     }
 }
