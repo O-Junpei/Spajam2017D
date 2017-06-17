@@ -169,14 +169,14 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     //MARK: テーブルビューのセルの中身を設定する
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //myItems配列の中身をテキストにして登録した
+        var comment = Dictionary<String,String>()
+        comment = comments[indexPath.row]
         
-        var comment2 = Dictionary<String,String>()
-        comment2 = comments[indexPath.row]
-        print(comment2)
         
-        if indexPath.row % 2 == 0 {
+        
+        if comment["username"] == userName {
             let cell:RightChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(RightChatTableViewCell.self), for: indexPath) as! RightChatTableViewCell
-            cell.commentLabel.text = comment2["message"]
+            cell.commentLabel.text = comment["message"]
             // cellの背景を透過
             cell.backgroundColor = UIColor.clear
             // cell内のcontentViewの背景を透過
@@ -186,7 +186,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             return cell
         }else{
             let cell:LeftChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(LeftChatTableViewCell.self), for: indexPath) as! LeftChatTableViewCell
-            cell.commentLabel.text = comment2["message"]
+            cell.commentLabel.text = comment["message"]
             // cellの背景を透過
             cell.backgroundColor = UIColor.clear
             // cell内のcontentViewの背景を透過
@@ -217,6 +217,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 
                 let json:JSON = JSON(response.result.value ?? kill)
                 print(json)
+                self.setDatas()
+                
             case .failure(let error):
                 print(error)
                 //テーブルの再読み込み
@@ -235,7 +237,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func shakeOn() {
         
-        let url:String = "http://192.168.226.14/arduino/digital/13/"
+        var url:String = "http://192.168.226.14/arduino/digital/13/"
 
         
         if isPerfume {
@@ -244,7 +246,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }else{
             isPerfume = true
             url += "1"
-        } 
+        }
         
         Alamofire.request(url, method: .get).responseJSON{ response in
             
