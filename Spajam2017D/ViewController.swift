@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate {
     
     //width, height
     private var viewWidth:CGFloat!
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         //解説のラベル
         let descriptionLabel:UILabel = UILabel()
         descriptionLabel.text = "メッセージをやり取りするには\nルーム名、自分の名前を\n入力してください"
-        descriptionLabel.frame =  CGRect(x: viewWidth*0.1, y: viewHeight*0.19, width: viewWidth*0.8, height: 5)
+        descriptionLabel.frame =  CGRect(x: viewWidth*0.1, y: viewHeight*0.2, width: viewWidth*0.8, height: 5)
         descriptionLabel.textAlignment = NSTextAlignment.center
         descriptionLabel.numberOfLines = 0
         descriptionLabel.sizeToFit()
@@ -56,8 +56,10 @@ class ViewController: UIViewController {
         self.view.addSubview(roomNameLabel)
         
         //ルーム名のテキストフィールド
-        roomNameTextField.frame = CGRect(x: viewWidth*0.1, y: viewHeight*0.43, width: viewWidth*0.8, height: viewHeight*0.08)
+        roomNameTextField.frame = CGRect(x: viewWidth*0.1, y: viewHeight*0.44, width: viewWidth*0.8, height: viewHeight*0.08)
         roomNameTextField.text = "ルーム名を入力してください"
+        roomNameTextField.delegate = self
+        roomNameTextField.tag = 100
         roomNameTextField.textColor = UIColor.gray
         roomNameTextField.backgroundColor = UIColor.white
         //titleTextField.borderStyle = UITextBorderStyle.roundedRect
@@ -70,20 +72,42 @@ class ViewController: UIViewController {
         self.view.addSubview(userNameLabel)
         
         //ルーム名のテキストフィールド
-        userNameTextField.frame = CGRect(x: viewWidth*0.1, y: viewHeight*0.62, width: viewWidth*0.8, height: viewHeight*0.1)
+        userNameTextField.frame = CGRect(x: viewWidth*0.1, y: viewHeight*0.62, width: viewWidth*0.8, height: viewHeight*0.08)
         userNameTextField.text = "名前"
+        userNameTextField.delegate = self
+        roomNameTextField.tag = 101
         userNameTextField.textColor = UIColor.gray
         userNameTextField.backgroundColor = UIColor.white
         self.view.addSubview(userNameTextField)
         
         //ボタン
         let goChatVCBtn:UIButton = UIButton()
-        goChatVCBtn.frame = CGRect(x: viewWidth*0.1, y: viewHeight*0.8, width: viewWidth*0.8, height: viewWidth*0.2)
+        goChatVCBtn.frame = CGRect(x: viewWidth*0.1, y: viewHeight*0.8, width: viewWidth*0.8, height: viewHeight*0.08)
         goChatVCBtn.backgroundColor = UIColor.appRightGreen()
         goChatVCBtn.addTarget(self, action: #selector(goChatVCBtnClicked(sender:)), for:.touchUpInside)
         goChatVCBtn.setTitle("つながる", for: UIControlState.normal)
         self.view.addSubview(goChatVCBtn)
         
+    }
+    
+    
+    //MARK: UITextFieldDelegateMethod
+    //UITextFieldが編集された直前に呼ばれる
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        textField.text = ""
+    }
+    
+    //UITextFieldが編集された直後に呼ばれる
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("textFieldDidEndEditing: \(textField.text!)")
+    }
+    
+    //改行ボタンが押された際に呼ばれる
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("textFieldShouldReturn \(textField.text!)")
+        textField.resignFirstResponder()
+        return true
     }
     
     // MARK: - チャットボタンが押されたら呼ばれる

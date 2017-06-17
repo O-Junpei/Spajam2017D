@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SCLAlertView
 
 class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -35,8 +36,6 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         setView()
         
     }
-    
-    
     
     func setDatas() {
         
@@ -104,16 +103,38 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         chatTableView.register(LeftChatTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(LeftChatTableViewCell.self))
         self.view.addSubview(chatTableView)
         
+        
+        //投稿ボタン
+        let addBtn:UIButton = UIButton()
+        addBtn.frame = CGRect(x: viewWidth*0.75, y: viewHeight*0.85, width: viewWidth*0.2, height: viewWidth*0.2)
+        addBtn.setImage(UIImage(named:"plus"), for: UIControlState.normal)
+        addBtn.addTarget(self, action: #selector(addButtonClicked(sender:)), for: .touchUpInside)
+        self.view.addSubview(addBtn)
+        
     }
         
     
     
     // MARK: - Button Action
-    
-    //basicボタンが押されたら呼ばれます
+    //backボタンが押されたら呼ばれます
     func backButtonClicked(sender: UIButton){
         print("basicButtonBtnClicked")
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    //basicボタンが押されたら呼ばれます
+    func addButtonClicked(sender: UIButton){
+        
+        let alert = SCLAlertView()
+        let txt = alert.addTextField("メッセージを入力")
+        alert.addButton("送信") {
+            
+            let string:String! = String(describing: txt.text!)
+            print(string)
+            
+            self.sentMessage(message: "test")
+        }
+        alert.showEdit("メッセージ送信", subTitle: "メッセージを入力してください。")
     }
     
     
@@ -170,11 +191,63 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     
+    
+    func sentMessage(message:String){
+        
+        let parameters: Parameters = [
+            "username": "mofumofuchan",
+            "message": "おっぱい",
+            "perfume": false
+        ]
+        
+        Alamofire.request("https://onsen-hackathon-rails-server.herokuapp.com/api/v0/rooms/room1", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+            
+            switch response.result {
+            case .success:
+                print("Validation Successful")
+                
+                let json:JSON = JSON(response.result.value ?? kill)
+                print(json)
+            case .failure(let error):
+                print(error)
+                //テーブルの再読み込み
+            }
+        }
+    }
+    
+    
     // MARK: - シェイクが検出されたら呼ばれる
     override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == UIEventSubtype.motionShake {
             print("Device was shaked")
         }
+    }
+    
+    func aaa() {
+        
+        func sentMessage(message:String){
+            
+            let parameters: Parameters = [
+                "username": "mofumofuchan",
+                "message": "none",
+                "perfume": true
+            ]
+            
+            Alamofire.request("https://onsen-hackathon-rails-server.herokuapp.com/api/v0/rooms/room1", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+                
+                switch response.result {
+                case .success:
+                    print("Validation Successful")
+                    
+                    let json:JSON = JSON(response.result.value ?? kill)
+                    print(json)
+                case .failure(let error):
+                    print(error)
+                    //テーブルの再読み込み
+                }
+            }
+        }
+        
     }
 
 }
