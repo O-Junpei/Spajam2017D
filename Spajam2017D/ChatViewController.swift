@@ -15,7 +15,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     private var viewHeight:CGFloat!
     
     //View
-    var chatTableView:UITableView!
+    var chatTableView:UITableView! = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,17 +24,35 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.viewWidth = self.view.frame.width
         self.viewHeight = self.view.frame.height
         
-        self.view.backgroundColor = UIColor.white
+        //self.view.backgroundColor = UIColor.white
+        /*
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "background")?.draw(in: self.view.bounds)
+        let image: UIImage! = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
+        */
+        
+        // make UIImageView instance
+        let imageView = UIImageView(frame: self.view.frame)
+        // read image
+        let image = UIImage(named: "background")
+        // set image to ImageView
+        imageView.image = image
+        // set alpha value of imageView
+        imageView.alpha = 0.5
+        // set imageView to backgroundView of TableView
+        chatTableView.backgroundView = imageView
         
         
         //
-        chatTableView = UITableView()
+        //chatTableView = UITableView()
         chatTableView.delegate = self
         chatTableView.dataSource = self
         chatTableView.frame = CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight)
         chatTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
         chatTableView.register(RightChatTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(RightChatTableViewCell.self))
+        chatTableView.register(LeftChatTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(LeftChatTableViewCell.self))
         self.view.addSubview(chatTableView)
     }
     
@@ -54,6 +72,11 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         
         cell.commentLabel.text = "self.myItems[indexPath.row] as? String"
+        
+        // cellの背景を透過
+        cell.backgroundColor = UIColor.clear
+        // cell内のcontentViewの背景を透過
+        cell.contentView.backgroundColor = UIColor.clear
         return cell
     }
 
