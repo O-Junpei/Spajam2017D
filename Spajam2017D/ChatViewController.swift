@@ -40,12 +40,18 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
         
+        //戻るボタン
+        let backView:UIButton = UIButton()
+        backView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        backView.setImage(UIImage(named: "back"), for: UIControlState.normal)
+        backView.addTarget(self, action: #selector(backButtonClicked(sender:)), for:.touchUpInside)
         
+        self.view.addSubview(backView)
         
         // make UIImageView instance
         var imageView = UIImageView(frame: self.view.frame)
         // read image
-        let image2 = UIImage(named: "background_talk")
+        let image2 = UIImage(named: "table")
         // set image to ImageView
         imageView.image = image2
         // set alpha value of imageView
@@ -54,25 +60,15 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         //self.tableView.backgroundView = imageView
         chatTableView.backgroundView = imageView
         
-        /*
-        
-        // make UIImageView instance
-        let imageView = UIImageView(frame: self.view.frame)
-        // read image
-        let image = UIImage(named: "background_talk")
-        // set image to ImageView
-        imageView.image = image
-        // set alpha value of imageView
-        imageView.alpha = 0.5
-        // set imageView to backgroundView of TableView
-        chatTableView.backgroundView = imageView
-        */
         
         //
         //chatTableView = UITableView()
         chatTableView.delegate = self
         chatTableView.dataSource = self
         chatTableView.frame = CGRect(x: 0, y: PARTS_HEIGHT_STATUS_BAR+PARTS_HEIGHT_NAVIGATION_BAR, width: viewWidth, height: viewHeight-(PARTS_HEIGHT_STATUS_BAR+PARTS_HEIGHT_NAVIGATION_BAR))
+        chatTableView.separatorColor = UIColor.clear
+        chatTableView.allowsSelection = false
+        chatTableView.separatorInset = UIEdgeInsets.zero
         chatTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         chatTableView.register(RightChatTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(RightChatTableViewCell.self))
         chatTableView.register(LeftChatTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(LeftChatTableViewCell.self))
@@ -84,30 +80,41 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func setDatas() {
         
         var comment0 = Dictionary<String,String>()
-        comment0["user"] = "user name"
-        comment0["comment"] = "00000commentcomment"
+        comment0["user"] = "onojun"
+        comment0["comment"] = "こんばんは、純平だよ"
         comments.append(comment0)
         
         var comment1 = Dictionary<String,String>()
         comment1["user"] = "user name"
-        comment1["comment"] = "1111commentcomment"
+        comment1["comment"] = "こんばんは、プレゼントありがとう"
         comments.append(comment1)
         
         var comment2 = Dictionary<String,String>()
-        comment2["user"] = "user name"
-        comment2["comment"] = "2222commentcomment"
+        comment2["user"] = "onojun"
+        comment2["comment"] = "あまーーーーーーーーーーいでしょ"
         comments.append(comment2)
         
         
         var comment3 = Dictionary<String,String>()
         comment3["user"] = "user name"
-        comment3["comment"] = "333commentcomment"
+        comment3["comment"] = "あまーーーーーーーーーーいでしょ"
         comments.append(comment3)
     }
     
     
-    // MARK: - TableViewのデリゲートメソッド
     
+    // MARK: - Button Action
+    
+    //basicボタンが押されたら呼ばれます
+    func backButtonClicked(sender: UIButton){
+        print("basicButtonBtnClicked")
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
+    // MARK: - TableViewのデリゲートメソッド
+
     //高さの設定
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -117,7 +124,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     //MARK: テーブルビューのセルの数を設定する
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //テーブルビューのセルの数はmyItems配列の数とした
-        return 3
+        return 14
     }
     
     
@@ -133,6 +140,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.backgroundColor = UIColor.clear
             // cell内のcontentViewの背景を透過
             cell.contentView.backgroundColor = UIColor.clear
+            cell.layoutMargins = UIEdgeInsets.zero
+            cell.preservesSuperviewLayoutMargins = false
             return cell
         }else{
             let cell:LeftChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(LeftChatTableViewCell.self), for: indexPath) as! LeftChatTableViewCell
@@ -141,6 +150,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.backgroundColor = UIColor.clear
             // cell内のcontentViewの背景を透過
             cell.contentView.backgroundColor = UIColor.clear
+            cell.layoutMargins = UIEdgeInsets.zero
+            cell.preservesSuperviewLayoutMargins = false
             return cell
             
         }

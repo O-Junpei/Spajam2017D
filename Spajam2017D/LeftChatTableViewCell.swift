@@ -33,10 +33,14 @@ class LeftChatTableViewCell: UITableViewCell {
         let cellHeight:CGFloat = self.frame.height
         
         
-        commentLabel.frame = CGRect(x: cellWidth*0.18, y: cellHeight*0.35, width: cellWidth*0.8, height: cellHeight*0.6)
+        commentLabel.frame = CGRect(x: cellWidth*0.05, y: cellHeight*0.35, width: cellWidth*0.8, height: cellHeight*0.6)
         commentLabel.font = UIFont.systemFont(ofSize: 12)
         //commentLabel.text = "左載せる"
         commentLabel.textColor = UIColor.gray
+        
+        commentLabel.textAlignment = NSTextAlignment.left
+        commentLabel.textColor = UIColor.gray
+        commentLabel.backgroundColor = UIColor.appGray()
         
     }
     

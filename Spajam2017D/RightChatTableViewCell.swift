@@ -35,7 +35,10 @@ class RightChatTableViewCell: UITableViewCell {
         
         commentLabel.frame = CGRect(x: cellWidth*0.18, y: cellHeight*0.35, width: cellWidth*0.8, height: cellHeight*0.6)
         commentLabel.font = UIFont.systemFont(ofSize: 12)
+        commentLabel.textAlignment = NSTextAlignment.right
         commentLabel.textColor = UIColor.gray
+        commentLabel.backgroundColor = UIColor.appRightGreen()
+        
         
     }
     
