@@ -13,6 +13,6 @@ extension UIColor {
     class func segmetRightBlue() -> UIColor {
         return UIColor.init(red: (18.0/256), green: (138.0/256), blue: (220/256), alpha: 1.0)
     }
-        
+    
 }
 

@@ -32,10 +32,9 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         chatTableView.delegate = self
         chatTableView.dataSource = self
         chatTableView.frame = CGRect(x: 0, y: 0, width: viewWidth, height: viewHeight)
-        chatTableView.rowHeight = viewWidth*0.28
         chatTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        chatTableView.register(ChatTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(ChatTableViewCell.self))
+        chatTableView.register(RightChatTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(RightChatTableViewCell.self))
         self.view.addSubview(chatTableView)
     }
     
@@ -51,7 +50,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //myItems配列の中身をテキストにして登録した
         
-        let cell:ChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(ChatTableViewCell.self), for: indexPath) as! ChatTableViewCell
+        let cell:RightChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(RightChatTableViewCell.self), for: indexPath) as! RightChatTableViewCell
         
         
         cell.commentLabel.text = "self.myItems[indexPath.row] as? String"

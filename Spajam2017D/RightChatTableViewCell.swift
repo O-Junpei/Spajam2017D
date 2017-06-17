@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChatTableViewCell: UITableViewCell {
+class RightChatTableViewCell: UITableViewCell {
     
     var commentLabel:UILabel = UILabel()
     

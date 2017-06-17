@@ -10,8 +10,10 @@
 		2A57A9F757418C5E4FEB65EC /* Pods_Spajam2017DTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D99EC792A27978FB955227F2 /* Pods_Spajam2017DTests.framework */; };
 		66D9531843B4DBD56234410A /* Pods_Spajam2017D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0552F0AEA4C37B6C673E7A46 /* Pods_Spajam2017D.framework */; };
 		8D1DED991EF557E60010F078 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DED981EF557E60010F078 /* ChatViewController.swift */; };
-		8D1DED9B1EF5587D0010F078 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DED9A1EF5587D0010F078 /* ChatTableViewCell.swift */; };
+		8D1DED9B1EF5587D0010F078 /* RightChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DED9A1EF5587D0010F078 /* RightChatTableViewCell.swift */; };
 		8D1DED9D1EF5698E0010F078 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DED9C1EF5698E0010F078 /* UIColorExtension.swift */; };
+		8D1DED9F1EF56A9F0010F078 /* LeftChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DED9E1EF56A9F0010F078 /* LeftChatTableViewCell.swift */; };
+		8D1DEDA31EF56B9D0010F078 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1DEDA21EF56B9D0010F078 /* NetWorkManager.swift */; };
 		8DDB1C6F1EF50E70006B132A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB1C6E1EF50E70006B132A /* AppDelegate.swift */; };
 		8DDB1C711EF50E70006B132A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDB1C701EF50E70006B132A /* ViewController.swift */; };
 		8DDB1C741EF50E70006B132A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DDB1C721EF50E70006B132A /* Main.storyboard */; };
@@ -45,8 +47,10 @@
 		7253A10E76938A9AAC2C1A91 /* Pods-Spajam2017DUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spajam2017DUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spajam2017DUITests/Pods-Spajam2017DUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8963AB9924277BB2A5CEB403 /* Pods-Spajam2017D.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spajam2017D.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spajam2017D/Pods-Spajam2017D.release.xcconfig"; sourceTree = "<group>"; };
 		8D1DED981EF557E60010F078 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		8D1DED9A1EF5587D0010F078 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		8D1DED9A1EF5587D0010F078 /* RightChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightChatTableViewCell.swift; sourceTree = "<group>"; };
 		8D1DED9C1EF5698E0010F078 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		8D1DED9E1EF56A9F0010F078 /* LeftChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftChatTableViewCell.swift; sourceTree = "<group>"; };
+		8D1DEDA21EF56B9D0010F078 /* NetWorkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
 		8DDB1C6B1EF50E70006B132A /* Spajam2017D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spajam2017D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DDB1C6E1EF50E70006B132A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DDB1C701EF50E70006B132A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8D1DEDA01EF56B5D0010F078 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8D1DEDA21EF56B9D0010F078 /* NetWorkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		8D1DEDA11EF56B690010F078 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8D1DED9C1EF5698E0010F078 /* UIColorExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		8DDB1C621EF50E70006B132A = {
 			isa = PBXGroup;
 			children = (
@@ -131,10 +151,12 @@
 			isa = PBXGroup;
 			children = (
 				8DDB1C6E1EF50E70006B132A /* AppDelegate.swift */,
+				8D1DEDA11EF56B690010F078 /* Extension */,
 				8DDB1C701EF50E70006B132A /* ViewController.swift */,
 				8D1DED981EF557E60010F078 /* ChatViewController.swift */,
-				8D1DED9A1EF5587D0010F078 /* ChatTableViewCell.swift */,
-				8D1DED9C1EF5698E0010F078 /* UIColorExtension.swift */,
+				8D1DEDA01EF56B5D0010F078 /* Manager */,
+				8D1DED9A1EF5587D0010F078 /* RightChatTableViewCell.swift */,
+				8D1DED9E1EF56A9F0010F078 /* LeftChatTableViewCell.swift */,
 				8DDB1C7A1EF50E70006B132A /* Info.plist */,
 				8DDB1C721EF50E70006B132A /* Main.storyboard */,
 				8DDB1C751EF50E70006B132A /* Assets.xcassets */,
@@ -462,8 +484,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DDB1C711EF50E70006B132A /* ViewController.swift in Sources */,
-				8D1DED9B1EF5587D0010F078 /* ChatTableViewCell.swift in Sources */,
+				8D1DED9B1EF5587D0010F078 /* RightChatTableViewCell.swift in Sources */,
+				8D1DED9F1EF56A9F0010F078 /* LeftChatTableViewCell.swift in Sources */,
 				8D1DED9D1EF5698E0010F078 /* UIColorExtension.swift in Sources */,
+				8D1DEDA31EF56B9D0010F078 /* NetWorkManager.swift in Sources */,
 				8D1DED991EF557E60010F078 /* ChatViewController.swift in Sources */,
 				8DDB1C6F1EF50E70006B132A /* AppDelegate.swift in Sources */,
 			);
