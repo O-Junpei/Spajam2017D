@@ -16,22 +16,21 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     //View
     var chatTableView:UITableView! = UITableView()
-
+    
+    //Datas
+    var comments:Array<Dictionary<String,String>> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //画面横サイズを取得
         self.viewWidth = self.view.frame.width
         self.viewHeight = self.view.frame.height
+        self.navigationController?.navigationBar.isTranslucent = false
+
         
-        //self.view.backgroundColor = UIColor.white
-        /*
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "background")?.draw(in: self.view.bounds)
-        let image: UIImage! = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        self.view.backgroundColor = UIColor(patternImage: image)
-        */
+        setDatas()
+        
         
         // make UIImageView instance
         let imageView = UIImageView(frame: self.view.frame)
@@ -57,27 +56,76 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     
+    
+    func setDatas() {
+        
+        var comment0 = Dictionary<String,String>()
+        comment0["user"] = "user name"
+        comment0["comment"] = "00000commentcomment"
+        comments.append(comment0)
+        
+        var comment1 = Dictionary<String,String>()
+        comment1["user"] = "user name"
+        comment1["comment"] = "1111commentcomment"
+        comments.append(comment1)
+        
+        var comment2 = Dictionary<String,String>()
+        comment2["user"] = "user name"
+        comment2["comment"] = "2222commentcomment"
+        comments.append(comment2)
+        
+        
+        var comment3 = Dictionary<String,String>()
+        comment3["user"] = "user name"
+        comment3["comment"] = "333commentcomment"
+        comments.append(comment3)
+    }
+    
+    
     // MARK: - TableViewのデリゲートメソッド
+    
+    //高さの設定
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 80
+    }
+    
     //MARK: テーブルビューのセルの数を設定する
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //テーブルビューのセルの数はmyItems配列の数とした
         return 3
     }
     
+    
+    
     //MARK: テーブルビューのセルの中身を設定する
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //myItems配列の中身をテキストにして登録した
         
-        let cell:RightChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(RightChatTableViewCell.self), for: indexPath) as! RightChatTableViewCell
+        if indexPath.row % 2 == 0 {
+            let cell:RightChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(RightChatTableViewCell.self), for: indexPath) as! RightChatTableViewCell
+            
+            cell.commentLabel.text = "右"
+            
+            // cellの背景を透過
+            cell.backgroundColor = UIColor.clear
+            // cell内のcontentViewの背景を透過
+            cell.contentView.backgroundColor = UIColor.clear
+            return cell
+        }else{
+            let cell:LeftChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(LeftChatTableViewCell.self), for: indexPath) as! LeftChatTableViewCell
+            
+            cell.commentLabel.text = "左"
+            
+            // cellの背景を透過
+            cell.backgroundColor = UIColor.clear
+            // cell内のcontentViewの背景を透過
+            cell.contentView.backgroundColor = UIColor.clear
+            return cell
+            
+        }
         
         
-        cell.commentLabel.text = "self.myItems[indexPath.row] as? String"
-        
-        // cellの背景を透過
-        cell.backgroundColor = UIColor.clear
-        // cell内のcontentViewの背景を透過
-        cell.contentView.backgroundColor = UIColor.clear
-        return cell
     }
 
 }

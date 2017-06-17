@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         //画面横サイズを取得
         self.viewWidth = self.view.frame.width
         self.viewHeight = self.view.frame.height
+        self.navigationController?.navigationBar.isTranslucent = false
+        
         
         let goChatVCBtn:UIButton = UIButton()
         goChatVCBtn.frame =  CGRect(x: 0, y: 0, width: 100, height: 100)
