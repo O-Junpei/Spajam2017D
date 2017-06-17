@@ -22,6 +22,14 @@ class ViewController: UIViewController {
         self.viewHeight = self.view.frame.height
         self.navigationController?.navigationBar.isTranslucent = false
         
+        //Viewの背景色を設定
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "background")?.draw(in: self.view.bounds)
+        let image: UIImage! = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
+        
+        
         
         let goChatVCBtn:UIButton = UIButton()
         goChatVCBtn.frame =  CGRect(x: 0, y: 0, width: 100, height: 100)
