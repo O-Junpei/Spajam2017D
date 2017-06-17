@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController,UITextFieldDelegate {
     
@@ -113,13 +115,39 @@ class ViewController: UIViewController,UITextFieldDelegate {
     // MARK: - チャットボタンが押されたら呼ばれる
     func goChatVCBtnClicked(sender: UIButton){
         
+        let roomName:String = roomNameTextField.text!
+        let userName:String = userNameTextField.text!
+        
+        let parameters: Parameters = [
+            "name": roomName,
+            "username": userName
+        ]
+            
+        Alamofire.request("https://onsen-hackathon-rails-server.herokuapp.com/api/v0/rooms/", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+                
+            switch response.result {
+            case .success:
+                
+                let json:JSON = JSON(response.result.value ?? kill)
+                print(json["result"].stringValue)
+                
+                if json["result"].stringValue == "created" || json["result"].stringValue == "connected"{
+                    self.goChatView()
+                }
+                
+            case .failure(let error):
+                print(error)
+                    //テーブルの再読み込み
+            }
+        }
+        
+    }
+    
+    func goChatView(){
         //画面遷移、投稿詳細画面へ
         let chatVC: ChatViewController = ChatViewController()
         //picDetailView.postID = sender.view?.tag
         self.navigationController?.pushViewController(chatVC, animated: true)
     }
-    
-
-
 }
 
