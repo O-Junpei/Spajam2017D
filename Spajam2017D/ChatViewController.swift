@@ -36,7 +36,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.viewHeight = self.view.frame.height
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        
+        self.navigationController?.navigationBar.isTranslucent = false
         setDatas()
         setView()
         
@@ -114,13 +114,13 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         addBtn.addTarget(self, action: #selector(addButtonClicked(sender:)), for: .touchUpInside)
         self.view.addSubview(addBtn)
         
-        //投稿ボタン
+        //リロード
         let reloadBtn:UIButton = UIButton()
-        reloadBtn.frame = CGRect(x: viewWidth*0.8, y: 0, width: viewWidth*0.1, height: viewWidth*0.1)
-        reloadBtn.backgroundColor = UIColor.blue
+        reloadBtn.frame = CGRect(x: viewWidth*0.85, y: viewWidth*0.07, width: viewWidth*0.12, height: viewWidth*0.12)
+        //reloadBtn.backgroundColor = UIColor.blue
+        reloadBtn.setImage(UIImage(named:"reflesh"), for: UIControlState.normal)
         reloadBtn.addTarget(self, action: #selector(reloadBtnClicked(sender:)), for: .touchUpInside)
         self.view.addSubview(reloadBtn)
-        
     }
         
     
@@ -172,6 +172,9 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         var comment = Dictionary<String,String>()
         comment = comments[indexPath.row]
         
+        //甘いの数値計算
+        calcAmaiNumber(message: comment["message"]!)
+        
         if comment["username"] == userName {
             let cell:RightChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(RightChatTableViewCell.self), for: indexPath) as! RightChatTableViewCell
             
@@ -215,6 +218,53 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // use as? or as! to cast UITableViewCell to your desired type
+        cell.backgroundColor = UIColor.clear
+        tableView.backgroundColor = UIColor.clear
+        
+    }
+    
+    
+    func calcAmaiNumber(message:String){
+        
+        let parameters: Parameters = [
+            "text":message
+        ]
+        
+        let url:String = "http://v150-95-173-128.a0d3.g.tyo1.static.cnode.io/analyse_sentiment"
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+            
+            switch response.result {
+            case .success:
+                print("Validation Successful")
+                
+                let json:JSON = JSON(response.result.value ?? kill)
+                
+                print(message)
+                print(json["score"].floatValue)
+                
+                if json["score"].floatValue > 0.999{
+                    
+                    print("0.999以上のやつ")
+                    print(message)
+                    print(json["score"].floatValue)
+                    
+                    self.shakeOn()
+                    
+                }
+                
+                
+            case .failure(let error):
+                print(error)
+                //テーブルの再読み込み
+            }
+        }
+        
+        
+    }
+    
     func sentMessage(message:String){
         
         let parameters: Parameters = [
@@ -253,7 +303,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func shakeOn() {
         
-        var url:String = "http://192.168.226.14/arduino/digital/13/"
+        var url:String = "http://172.31.3.89/arduino/digital/13/"
 
         
         if isPerfume {

@@ -106,7 +106,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
         
         //ルーム名のテキストフィールド
         userNameTextField.frame = CGRect(x: viewWidth*0.1, y: viewHeight*0.62, width: viewWidth*0.8, height: viewHeight*0.08)
-        userNameTextField.text = "名前"
+        //userNameTextField.text = "yuko"
+        userNameTextField.text = "onojun"
         userNameTextField.delegate = self
         roomNameTextField.tag = 101
         userNameTextField.textColor = UIColor.gray
@@ -177,10 +178,10 @@ class ViewController: UIViewController,UITextFieldDelegate {
     func goChatView(){
         //画面遷移、投稿詳細画面へ
         let chatVC: ChatViewController = ChatViewController()
-        //chatVC.roomName = roomNameTextField.text!
-        //chatVC.userName = userNameTextField.text!
-        chatVC.roomName = "room1"
-        chatVC.userName = "mofumofuchan"
+        chatVC.roomName = roomNameTextField.text!
+        chatVC.userName = userNameTextField.text!
+        //chatVC.roomName = "ddd"
+        ///chatVC.userName = "mofumofuchan"
         self.navigationController?.pushViewController(chatVC, animated: true)
     }
 }
