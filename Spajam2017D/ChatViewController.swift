@@ -172,20 +172,36 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         var comment = Dictionary<String,String>()
         comment = comments[indexPath.row]
         
-        
-        
         if comment["username"] == userName {
             let cell:RightChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(RightChatTableViewCell.self), for: indexPath) as! RightChatTableViewCell
+            
+            var cellWidth:CGFloat = CGFloat(comment["message"]!.characters.count*20)
+            if cellWidth > viewWidth*0.9{
+                cellWidth = viewWidth*0.9
+            }
+            
             cell.commentLabel.text = comment["message"]
+            
+            cell.commentLabel.frame = CGRect(x: viewWidth-(cellWidth+viewWidth*0.05), y: 80*0.35, width:  cellWidth, height: 80*0.6)
+                        
             // cellの背景を透過
             cell.backgroundColor = UIColor.clear
             // cell内のcontentViewの背景を透過
             cell.contentView.backgroundColor = UIColor.clear
             cell.layoutMargins = UIEdgeInsets.zero
             cell.preservesSuperviewLayoutMargins = false
+            
             return cell
         }else{
             let cell:LeftChatTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(LeftChatTableViewCell.self), for: indexPath) as! LeftChatTableViewCell
+            
+            var cellWidth:CGFloat = CGFloat(comment["message"]!.characters.count*20)
+            if cellWidth > viewWidth*0.9{
+                cellWidth = viewWidth*0.9
+            }
+            
+            
+            cell.commentLabel.frame = CGRect(x: viewWidth*0.05, y: 80*0.35, width: cellWidth, height: 80*0.6)
             cell.commentLabel.text = comment["message"]
             // cellの背景を透過
             cell.backgroundColor = UIColor.clear

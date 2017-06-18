@@ -25,6 +25,31 @@ class ViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         
         
+        /*
+        let parameters: Parameters = [
+            "text":"こんにちは。とてもうれしいことが起こりました。本当にびっくりです。うれしい"
+        ]
+        
+        let url:String = "http://v150-95-173-128.a0d3.g.tyo1.static.cnode.io/analyse_sentiment"
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON{ response in
+            
+            switch response.result {
+            case .success:
+                print("Validation Successful")
+                
+                let json:JSON = JSON(response.result.value ?? kill)
+                print(json)
+                
+            case .failure(let error):
+                print(error)
+                //テーブルの再読み込み
+            }
+        }
+        
+        */
+        
+        
         
         
         

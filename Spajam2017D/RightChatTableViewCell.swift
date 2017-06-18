@@ -10,11 +10,13 @@ import UIKit
 
 class RightChatTableViewCell: UITableViewCell {
     
+    var commentFrame:UIView = UIView()
     var commentLabel:UILabel = UILabel()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        contentView.addSubview(commentLabel)
         contentView.addSubview(commentLabel)
     }
     
@@ -29,15 +31,12 @@ class RightChatTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let cellWidth:CGFloat = self.frame.width
-        let cellHeight:CGFloat = self.frame.height
-
-        
-        commentLabel.frame = CGRect(x: cellWidth*0.18, y: cellHeight*0.35, width: cellWidth*0.8, height: cellHeight*0.6)
         commentLabel.font = UIFont.systemFont(ofSize: 12)
-        commentLabel.textAlignment = NSTextAlignment.right
-        commentLabel.textColor = UIColor.gray
+        commentLabel.textAlignment = NSTextAlignment.center
+        commentLabel.textColor = UIColor.black
         commentLabel.backgroundColor = UIColor.appRightGreen()
+        commentLabel.layer.cornerRadius = 16
+        commentLabel.clipsToBounds = true
         
         
     }

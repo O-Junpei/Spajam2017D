@@ -28,20 +28,15 @@ class LeftChatTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        let cellWidth:CGFloat = self.frame.width
-        let cellHeight:CGFloat = self.frame.height
-        
-        
-        commentLabel.frame = CGRect(x: cellWidth*0.05, y: cellHeight*0.35, width: cellWidth*0.8, height: cellHeight*0.6)
+
         commentLabel.font = UIFont.systemFont(ofSize: 12)
         //commentLabel.text = "左載せる"
         commentLabel.textColor = UIColor.gray
-        
-        commentLabel.textAlignment = NSTextAlignment.left
-        commentLabel.textColor = UIColor.gray
+        commentLabel.textAlignment = NSTextAlignment.center
+        commentLabel.textColor = UIColor.black
         commentLabel.backgroundColor = UIColor.appGray()
-        
+        commentLabel.layer.cornerRadius = 16
+        commentLabel.clipsToBounds = true
     }
     
     

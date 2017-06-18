@@ -20,4 +20,17 @@ class UtilityLibrary: NSObject {
         
         return calcTextView.frame.size.height
     }
+    
+ 
+    class func calcTextViewWidth(text:String,height:CGFloat,font:UIFont)->CGFloat{
+        let calcTextView:UITextView = UITextView()
+        calcTextView.frame = CGRect(x: 0, y: 0, width:5, height: height)
+        calcTextView.font = font
+        calcTextView.text = text
+        calcTextView.sizeToFit()
+        
+        return calcTextView.frame.size.width
+ 
+    }
+    
 }
